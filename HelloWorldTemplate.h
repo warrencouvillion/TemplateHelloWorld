@@ -1,15 +1,13 @@
 #include <iostream>
-#include <cstring>
 
-class HelloWorldString
+struct HelloWorldString
 {
-protected:
     static const char s_helloWorldString[];
 };
 const char HelloWorldString::s_helloWorldString[] = "Hello World!\n";
 
 template<size_t N = 0>
-class HelloWorld : public HelloWorldString
+class HelloWorld : private HelloWorldString
 {
 public:
     HelloWorld()
